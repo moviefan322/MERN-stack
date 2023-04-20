@@ -5,7 +5,7 @@ const ResponseSchema = new mongoose.Schema({
     type: String,
   },
   yesno: {
-    type: boolean,
+    type: String,
   },
   day: {
     type: String,
