@@ -13,6 +13,9 @@ const ResponseSchema = new mongoose.Schema({
   location: {
     type: String,
   },
+  venue: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Response", ResponseSchema);
