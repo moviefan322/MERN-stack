@@ -67,11 +67,6 @@ function BarComp() {
 
   const [locationData, setLocationData] = useState(null);
 
-  console.log(Object.keys(locationMap));
-  console.log(Object.values(locationMap));
-  console.log("locationMap", locationMap);
-  console.log("locationData", locationData);
-
   if (!locationData) {
     return <div>Loading...</div>;
   }

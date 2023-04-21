@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chakra-react-select": "^4.6.0",
     "colors": "^1.4.0",
     "concurrently": "^8.0.1"
   },
