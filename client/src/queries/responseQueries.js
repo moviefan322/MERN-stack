@@ -3,13 +3,12 @@ import { gql } from "@apollo/client";
 const GET_RESPONSES = gql`
   query getResponses {
     responses {
-        id
-        name
-        yesno
-        day
-        location
-        venue
-      }
+      id
+      name
+      yesno
+      day
+      location
+      venue
     }
   }
 `;

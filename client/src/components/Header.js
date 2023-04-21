@@ -12,7 +12,7 @@ export default function Header() {
               className="mr-2"
               style={{ width: "50px" }}
             />
-            <div>ProjectMgmt</div>
+            <div>Let's Party</div>
           </div>
         </a>
       </div>
