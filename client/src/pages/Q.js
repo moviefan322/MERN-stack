@@ -6,10 +6,10 @@ import { Button } from "react-bootstrap";
 
 function Q(props) {
   const [formState, setFormState] = useState({
-    name: "",
-    yesno: "",
-    day: "",
-    location: "",
+    name: "Anon",
+    yesno: "Yes",
+    day: "Thursday",
+    location: "Manhattan",
     venue: "",
   });
   const [addResponse, { error }] = useMutation(ADD_RESPONSE);
