@@ -6,8 +6,8 @@ import { Button } from "react-bootstrap";
 
 function Q(props) {
   const [formState, setFormState] = useState({
-    name: "Anon",
-    yesno: "Yes",
+    name: "",
+    yesno: "yes",
     day: "Thursday",
     location: "Manhattan",
     venue: "",
