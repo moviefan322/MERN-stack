@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import { useState } from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Q from "./pages/Q";
 import Charts from "./pages/Charts";
@@ -21,7 +22,7 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <Header />
-        {submitted ? <Charts /> : <Q setSubmitted={setSubmitted} />}
+        {isSubmitted ? <Charts /> : <Q setSubmitted={setSubmitted} />}
       </ApolloProvider>
     </>
   );
