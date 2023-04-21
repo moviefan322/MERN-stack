@@ -4,7 +4,7 @@ import { ADD_RESPONSE } from "../mutations/responseMutations";
 import { useMutation } from "@apollo/client";
 import { Button } from "react-bootstrap";
 
-function Q() {
+function Q(props) {
   const [formState, setFormState] = useState({
     name: "",
     yesno: "",
@@ -27,6 +27,7 @@ function Q() {
 
     localStorage.setItem("submitted", "true");
     setSubmitted(true);
+    props.setSubmitted(true);
 
     setFormState({
       name: "",

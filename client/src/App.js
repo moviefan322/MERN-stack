@@ -9,13 +9,19 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const submitted = localStorage.getItem("submitted");
+  const [isSubmitted, setIsSubmitted] = useState(
+    localStorage.getItem("submitted")
+  );
+
+  const setSubmitted = (value) => {
+    setIsSubmitted(value);
+  };
 
   return (
     <>
       <ApolloProvider client={client}>
         <Header />
-        {submitted ? <Charts /> : <Q />}
+        {submitted ? <Charts /> : <Q setSubmitted={setSubmitted} />}
       </ApolloProvider>
     </>
   );
