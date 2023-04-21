@@ -7,9 +7,9 @@ import { Button } from "react-bootstrap";
 function Q(props) {
   const [formState, setFormState] = useState({
     name: "",
-    yesno: "yes",
-    day: "Thursday",
-    location: "Manhattan",
+    yesno: "",
+    day: "T",
+    location: "",
     venue: "",
   });
   const [addResponse, { error }] = useMutation(ADD_RESPONSE);
@@ -77,6 +77,7 @@ function Q(props) {
                 onChange={handleChange}
                 className="form-select"
               >
+                <option value="">Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
               </select>
@@ -94,6 +95,7 @@ function Q(props) {
                 className="form-select"
                 mx="auto"
               >
+                <option value="">Select</option>
                 <option value="Thursday">Thursday</option>
                 <option value="Friday">Friday</option>
                 <option value="Saturday">Saturday</option>
@@ -113,6 +115,7 @@ function Q(props) {
                 className="form-select"
                 mx="auto"
               >
+                <option value="">Select</option>
                 <option value="Manhattan">Manhattan</option>
                 <option value="Brooklyn">Brooklyn</option>
                 <option value="Queens">Queens</option>
