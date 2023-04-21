@@ -25,6 +25,8 @@ function Q(props) {
       console.error(e);
     }
 
+    console.log(formState);
+
     localStorage.setItem("submitted", "true");
     setSubmitted(true);
     props.setSubmitted(true);
