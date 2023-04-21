@@ -13,7 +13,6 @@
     "start": "cd server && npm run start",
     "build": "cd client && npm run build",
     "watch": "nodemon index.js",
-    // "seed": "cd server && npm run seed"
   },
   "keywords": [],
   "author": "",
