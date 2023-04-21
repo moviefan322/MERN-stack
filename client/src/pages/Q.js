@@ -57,7 +57,14 @@ function Q(props) {
             <Heading as="h3" mb={2}>
               Name
             </Heading>
-            <Input type="text" name="name" placeholder="Name" mx="auto" />
+            <Input
+              type="text"
+              name="name"
+              placeholder="Name"
+              mx="auto"
+              value={formState.name}
+              onChange={handleChange}
+            />
           </Box>
           <Box mb={4}>
             <Heading as="h3" mb={2}>
