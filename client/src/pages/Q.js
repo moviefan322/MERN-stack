@@ -2,8 +2,10 @@ import { React, useState } from "react";
 import { Heading, Box, Input } from "@chakra-ui/react";
 import { ADD_RESPONSE } from "../mutations/responseMutations";
 import { useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 function Q() {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     name: "",
     yesno: "",
@@ -34,7 +36,7 @@ function Q() {
     console.log(formState);
 
     if (!error) {
-      window.location.reload();
+      navigate("/results");
     }
   };
 
