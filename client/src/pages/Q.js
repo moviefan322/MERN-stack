@@ -2,11 +2,9 @@ import { React, useState } from "react";
 import { Box, Heading, Input } from "@chakra-ui/react";
 import { ADD_RESPONSE } from "../mutations/responseMutations";
 import { useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 function Q() {
-  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     name: "",
     yesno: "",
@@ -37,10 +35,6 @@ function Q() {
       location: "",
       venue: "",
     });
-
-    if (submitted) {
-      navigate("/results");
-    }
   };
 
   const handleChange = (event) => {

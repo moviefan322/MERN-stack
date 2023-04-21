@@ -1,36 +1,24 @@
-  import Header from "./components/Header";
-  import { useEffect } from "react";
-  import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-  import Q from "./pages/Q";
-  import Charts from "./pages/Charts";
-  import {
-    BrowserRouter as Router,
-    Route,
-    Routes,
-    useNavigate,
-  } from "react-router-dom";
+import Header from "./components/Header";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import Q from "./pages/Q";
+import Charts from "./pages/Charts";
 
-  const client = new ApolloClient({
-    uri: "/graphql",
-    cache: new InMemoryCache(),
-  });
+const client = new ApolloClient({
+  uri: "/graphql",
+  cache: new InMemoryCache(),
+});
 
-  function App() {
-    const submitted = localStorage.getItem("submitted");
+function App() {
+  const submitted = localStorage.getItem("submitted");
 
-    return (
-      <>
-        <ApolloProvider client={client}>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path="/" element={submitted ? <Charts /> : <Q />} />
-              <Route path="/results" element={<Charts />} />
-            </Routes>
-          </Router>
-        </ApolloProvider>
-      </>
-    );
-  }
+  return (
+    <>
+      <ApolloProvider client={client}>
+        <Header />
+        {submitted ? <Charts /> : <Q />}
+      </ApolloProvider>
+    </>
+  );
+}
 
-  export default App;
+export default App;
