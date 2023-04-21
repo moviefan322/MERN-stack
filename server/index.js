@@ -24,10 +24,10 @@ app.use(
 );
 
 // point to dist folder
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("/", (req, res) =>
-  res.sendFile(__dirname, "../client/dist/index.html")
+  res.sendFile(__dirname, "../client/build/index.html")
 );
 
 app.listen(port, console.log(`Server started on port ${port}`));
