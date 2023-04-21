@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type:": "commonjs",
   "scripts": {
     "test": "eslint",
     "install": "cd client && npm install && cd ../server && npm install",
@@ -11,7 +12,8 @@
     "server": "cd server && npm run watch",
     "start": "cd server && npm run start",
     "build": "cd client && npm run build",
-    "watch": "nodemon index.js"
+    "watch": "nodemon index.js",
+    "seed": "cd server && npm run seed"
   },
   "keywords": [],
   "author": "",

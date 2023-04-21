@@ -41,11 +41,11 @@ const mutation = new GraphQLObjectType({
     addResponse: {
       type: ResponseType,
       args: {
-        name: { type: GraphQLNonNull(GraphQLString) },
-        yesno: { type: GraphQLNonNull(GraphQLString) },
-        day: { type: GraphQLNonNull(GraphQLString) },
-        location: { type: GraphQLNonNull(GraphQLString) },
-        venue: { type: GraphQLNonNull(GraphQLString) },
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        yesno: { type: new GraphQLNonNull(GraphQLString) },
+        day: { type: new GraphQLNonNull(GraphQLString) },
+        location: { type: new GraphQLNonNull(GraphQLString) },
+        venue: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parent, args) {
         let response = new Response({
