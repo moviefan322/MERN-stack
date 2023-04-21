@@ -69,7 +69,6 @@ function Q(props) {
                 value={formState.yesno}
                 onChange={handleChange}
                 className="form-select"
-                mx="auto"
               >
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
