@@ -73,7 +73,7 @@ function BarComp() {
 
   return (
     <div className="App">
-      <div style={{ width: "60vw" }}>
+      <div style={{ width: "45vw" }}>
         <BarChart chartData={locationData} />
       </div>
     </div>
