@@ -69,7 +69,7 @@ function DoughnutComp() {
 
   return (
     <div className="App">
-      <div style={{ width: "18vw" }}>
+      <div style={{ width: "16vw" }}>
         <DoughnutChart chartData={dayData} />
       </div>
     </div>
