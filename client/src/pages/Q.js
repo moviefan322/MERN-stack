@@ -1,8 +1,9 @@
 import { React, useState } from "react";
-import { Heading, Box, Input } from "@chakra-ui/react";
+import { Box, Heading, Input } from "@chakra-ui/react";
 import { ADD_RESPONSE } from "../mutations/responseMutations";
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Q() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ function Q() {
     venue: "",
   });
   const [addResponse, { error }] = useMutation(ADD_RESPONSE);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +27,9 @@ function Q() {
       console.error(e);
     }
 
+    localStorage.setItem("submitted", "true");
+    setSubmitted(true);
+
     setFormState({
       name: "",
       yesno: "",
@@ -33,9 +38,7 @@ function Q() {
       venue: "",
     });
 
-    console.log(formState);
-
-    if (!error) {
+    if (submitted) {
       navigate("/results");
     }
   };
@@ -49,50 +52,99 @@ function Q() {
   };
 
   return (
-    <div>
-      <Box>
-        <form onSubmit={handleSubmit}>
-          <Heading>Name</Heading>
-          <Input type="text" name="name" placeholder="Name" />
-          <Heading>Would you attend a graduation party?</Heading>
-          <select name="yesno" value={formState.yesno} onChange={handleChange}>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <Heading>Which day would you prefer?</Heading>
-          <select name="day" value={formState.day} onChange={handleChange}>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-          <Heading>Which borough is most convenient for you?</Heading>
-          <select
-            name="location"
-            value={formState.location}
-            onChange={handleChange}
-          >
-            <option value="Manhattan">Manhattan</option>
-            <option value="Brooklyn">Brooklyn</option>
-            <option value="Queens">Queens</option>
-            <option value="Bronx">Bronx</option>
-            <option value="Staten Island">Staten Island</option>
-          </select>
-          <Heading>Suggest a venue (optional)</Heading>
-          <Input
-            type="text"
-            name="venue"
-            placeholder="Venue"
-            value={formState.venue}
-            onChange={handleChange}
-          />
-          <button type="submit" onClick={handleSubmit}>
-            Submit
-          </button>
-        </form>
+    <>
+      <Box className="qh1" mx="auto" mt={8} textAlign="center">
+        <h1>amDown && (letsParty)</h1>
       </Box>
-      {error && <div>Something went wrong...</div>}
-    </div>
+      <Box className="qForm" mx="auto" mt={8} textAlign="center">
+        <form onSubmit={handleSubmit}>
+          <Box mb={4}>
+            <Heading as="h3" mb={2}>
+              Name
+            </Heading>
+            <Input type="text" name="name" placeholder="Name" mx="auto" />
+          </Box>
+          <Box mb={4}>
+            <Heading as="h3" mb={2}>
+              Would you attend a graduation party?
+            </Heading>
+            <Box mb={4} w={["100%", "100%", "35%"]} mx="auto">
+              <select
+                name="yesno"
+                value={formState.yesno}
+                onChange={handleChange}
+                className="form-select"
+                mx="auto"
+              >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </Box>
+          </Box>
+          <Box mb={4}>
+            <Heading as="h3" mb={2}>
+              Which day would you prefer?
+            </Heading>
+            <Box mb={4} w={["100%", "100%", "35%"]} mx="auto">
+              <select
+                name="day"
+                value={formState.day}
+                onChange={handleChange}
+                className="form-select"
+                mx="auto"
+              >
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select>
+            </Box>
+          </Box>
+          <Box mb={4}>
+            <Heading as="h3" mb={2}>
+              Which borough is most convenient for you?
+            </Heading>
+            <Box mb={4} w={["100%", "100%", "35%"]} mx="auto">
+              <select
+                name="location"
+                value={formState.location}
+                onChange={handleChange}
+                className="form-select"
+                mx="auto"
+              >
+                <option value="Manhattan">Manhattan</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Queens">Queens</option>
+                <option value="Bronx">Bronx</option>
+                <option value="Staten Island">Staten Island</option>
+              </select>
+            </Box>
+          </Box>
+          <Box mb={4}>
+            <Heading as="h3" mb={2}>
+              Suggest a venue (optional)
+            </Heading>
+            <Input
+              type="text"
+              name="venue"
+              placeholder="Venue"
+              value={formState.venue}
+              onChange={handleChange}
+              mx="auto"
+            />
+          </Box>
+          <Button
+            type="submit"
+            onClick={handleSubmit}
+            variant="solid"
+            className="btn btn-primary"
+          >
+            Submit
+          </Button>
+        </form>
+        {error && <div>Something went wrong...</div>}
+      </Box>
+    </>
   );
 }
 

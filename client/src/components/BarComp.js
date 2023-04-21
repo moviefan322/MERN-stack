@@ -51,7 +51,7 @@ function BarComp() {
             backgroundColor: [
               "rgba(75,192,192,1)",
               "#ecf0f1",
-              "#50AF95",
+              "darkred",
               "#f3ba2f",
               "#2a71d0",
             ],
@@ -73,7 +73,7 @@ function BarComp() {
 
   return (
     <div className="App">
-      <div style={{ width: 700 }}>
+      <div style={{ width: 600 }}>
         <BarChart chartData={locationData} />
       </div>
     </div>

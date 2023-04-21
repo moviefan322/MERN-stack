@@ -47,7 +47,7 @@ function DoughnutComp() {
             backgroundColor: [
               "rgba(75,192,192,1)",
               "#ecf0f1",
-              "#50AF95",
+              "darkred",
               "#f3ba2f",
               "#2a71d0",
             ],
@@ -69,7 +69,7 @@ function DoughnutComp() {
 
   return (
     <div className="App">
-      <div style={{ width: 350 }}>
+      <div style={{ width: 250 }}>
         <DoughnutChart chartData={dayData} />
       </div>
     </div>

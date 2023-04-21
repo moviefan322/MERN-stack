@@ -30,7 +30,7 @@ function PieComp() {
       setYesNoTally(newYesNoMap);
 
       const yesNoDetails = {
-        labels: Object.keys(newYesNoMap),
+        labels: ["I'm in!", "Screw you nerds!"],
         datasets: [
           {
             label: "Yes/No Responses",
@@ -56,7 +56,7 @@ function PieComp() {
 
   return (
     <div className="App">
-      <div style={{ width: 350 }}>
+      <div style={{ width: 250 }}>
         <PieChart chartData={yesNoData} />
       </div>
     </div>
