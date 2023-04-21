@@ -56,7 +56,7 @@ function PieComp() {
 
   return (
     <div className="App">
-      <div style={{ width: 250 }}>
+      <div style={{ width: "25vw" }}>
         <PieChart chartData={yesNoData} />
       </div>
     </div>
